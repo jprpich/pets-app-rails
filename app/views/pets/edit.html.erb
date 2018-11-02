@@ -1,5 +1,5 @@
 <h1>Edit Mascota</h1>
-<%= form_tag("/pets/#{@pet.id}", method: "patch") do %>
+<%= form_tag(@pet, method: "patch") do %>
   <%= text_field(:pet, :name) %>
   <%= submit_tag("Edit Pet!") %>
 <% end %>

@@ -1,11 +1,13 @@
 <h1>Estas son las mascotas</h1>
 <ul>
   <% @pets.each do |pet| %>
-    <li><a href="/pets/<%= pet.id %>"><%= pet.name %></a></li>
+    <%= link_to pet.name, pet %>
     <li>
-      <%= form_tag("/pets/#{pet.id}/delete", method: "delete") do %>
+      <%= form_tag(pet, method: "delete") do %>
         <%= submit_tag("Delete Pet!") %>
       <% end %>
     </li>
   <% end %>
 </ul>
+
+<%= link_to "NEW PET!", new_pet_path %>
